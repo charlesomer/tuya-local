@@ -62,6 +62,7 @@ secondary_entities:
         name: lock
   - entity: sensor
     class: temperature
+    category: diagnostic
     dps:
       - id: 110
         type: integer
