@@ -5,6 +5,8 @@ products:
     name: Gosund EP2
   - id: 37mnhia3pojleqfh
     name: SP111-A
+  - id: kOKEJBFoF9VNB5FR
+    name: Tuya HYS-U1S-13A
 primary_entity:
   entity: switch
   class: outlet
