@@ -26,6 +26,45 @@
                 "state": {
                     "off": "mdi:radiator-off"
                 }
+            },
+            "oven": {
+                "default": "mdi:stove"
+            }
+        },
+        "fan": {
+            "aroma_diffuser": {
+                "default": "mdi:scent",
+                "state": {
+                    "off": "mdi:scent-off"
+                },
+                "state_attributes": {
+                    "preset_mode": {
+                        "state": {
+                            "low": "mdi:signal-cellular-1",
+                            "medium": "mdi:signal-cellular-2",
+                            "high": "mdi:signal-cellular-3",
+                            "continuous": "mdi:clock-start",
+                            "intermittent": "mdi:timer-settings-outline"
+                        }
+                    }
+                }
+            },
+            "fan_with_presets": {
+                "state_attributes": {
+                    "preset_mode": {
+                        "state": {
+                            "baby": "mdi:baby-carriage",
+                            "fresh": "mdi:weather-windy",
+                            "nature": "mdi:palm-tree",
+                            "normal": "mdi:fan",
+                            "sleep": "mdi:sleep",
+                            "smart": "mdi:auto-mode",
+                            "strong": "mdi:weather-hurricane",
+                            "displayoff": "mdi:monitor-off",
+                            "off": "mdi:fan-off"
+                        }
+                    }
+                }
             }
         },
         "light": {
@@ -71,6 +110,29 @@
             }
         },
         "select": {
+            "recipe": {
+                "default": "mdi:nutrition",
+                "state": {
+                    "pizza": "mdi:pizza",
+                    "fries": "mdi:french-fries",
+                    "chicken": "mdi:food-turkey",
+                    "shrimp": "mdi:sausage",
+                    "fish": "mdi:food-fish",
+                    "chicken_drumsticks": "mdi:food-drumstick",
+                    "chicken_wings": "mdi:food-drumstick",
+                    "vegetables": "mdi:leek",
+                    "desserts": "mdi:cupcake",
+                    "steak": "mdi:food-steak",
+                    "onion_rings": "mdi:bullseye",
+                    "bacon": "mdi:food-steak",
+                    "cake": "mdi:cake-variant",
+                    "toast": "mdi:bread-slice",
+                    "custom": "mdi:food-fork-drink",
+                    "cloud_recipe": "mdi:cloud-print",
+                    "keep_warm": "mdi:heat-wave",
+                    "preheat": "mdi:fire"
+                }
+            },
             "timer": {
                 "default": "mdi:timer"
             },
@@ -81,12 +143,23 @@
                 }
             }
         },
+        "sensor": {
+            "time_remaining": {
+                "default": "mdi:timer"
+            }
+        },
         "switch": {
             "anti_frost": {
                 "default": "mdi:snowflake-melt"
             },
+            "evaporator_cleaning": {
+                "default": "mdi:shimmer"
+            },
             "ionizer": {
                 "default": "mdi:creation"
+            },
+            "keytone": {
+                "default": "mdi:bell-ring"
             },
             "uv_sterilization": {
                 "default": "mdi:solar-power"

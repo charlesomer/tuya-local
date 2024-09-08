@@ -98,11 +98,18 @@ DP_SCHEMA = vol.Schema(
         },
         vol.Optional("unit"): str,
         vol.Optional("precision"): vol.Any(int, float),
-        vol.Optional("class"): str,
+        vol.Optional("class"): vol.In(
+            [
+                "measurement",
+                "total",
+                "total_increasing",
+            ]
+        ),
         vol.Optional("optional"): True,
         vol.Optional("persist"): False,
         vol.Optional("hidden"): True,
         vol.Optional("readonly"): True,
+        vol.Optional("sensitive"): True,
         vol.Optional("force"): True,
         vol.Optional("icon_priority"): int,
         vol.Optional("mapping"): [MAPPING_SCHEMA],
@@ -513,6 +520,21 @@ class TestDeviceConfig(IsolatedAsyncioTestCase):
                         key.startswith("sec"),
                         f"misspelled secondary_entities in {cfg}",
                     )
+
+    def test_configs_can_be_matched(self):
+        """Test that the config files can be matched to a device."""
+        for cfg in available_configs():
+            required_dps = 0
+            parsed = TuyaDeviceConfig(cfg)
+            for entity in parsed.all_entities():
+                for dp in entity.dps():
+                    if not dp.optional:
+                        required_dps += 1
+            self.assertGreater(
+                required_dps,
+                0,
+                msg=f"No required dps found in {cfg}",
+            )
 
     # Most of the device_config functionality is exercised during testing of
     # the various supported devices.  These tests concentrate only on the gaps.
