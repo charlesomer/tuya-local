@@ -17,13 +17,6 @@ primary_entity:
       type: boolean
       name: switch
 secondary_entities:
-  - entity: switch
-    class: outlet
-    dps:
-      - id: 1
-        type: boolean
-        name: switch
-
   - entity: sensor
     category: diagnostic
     class: voltage
