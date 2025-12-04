@@ -1,6 +1,8 @@
-name: Electriq PD45E dehumidifier
+name: Dehumidifier
 products:
   - id: 75174020a4e57c1945ca
+    manufacturer: Electriq
+    model: PD45E
 primary_entity:
   entity: humidifier
   class: dehumidifier
@@ -29,6 +31,10 @@ primary_entity:
         max: 80
       mapping:
         - step: 5
+    - id: 11
+      type: integer
+      name: unknown_11
+      # Probably one of these integers is timer, the other fault_code
     - id: 106
       type: integer
       name: unknown_106
@@ -36,6 +42,9 @@ primary_entity:
       type: boolean
       name: unknown_107
       # Probably one boolean is defrost indicator, the other may be tank?
+    - id: 108
+      type: boolean
+      name: unknown_108
 secondary_entities:
   - entity: fan
     dps:

@@ -1,12 +1,14 @@
 name: Energy monitoring smartplug
 legacy_type: kogan_switch
 products:
-  - id: 370053454855194e5607
-    name: Gosund EP2
+  - id: "370053454855194e5607"
+    manufacturer: Gosund
+    model: EP2
   - id: 37mnhia3pojleqfh
-    name: SP111-A
+    model: SP111-A
   - id: kOKEJBFoF9VNB5FR
-    name: Tuya HYS-U1S-13A
+    model: HYS-U1S-13A
+    manufacturer: Tuya
 primary_entity:
   entity: switch
   class: outlet
@@ -15,6 +17,13 @@ primary_entity:
       type: boolean
       name: switch
 secondary_entities:
+  - entity: switch
+    class: outlet
+    dps:
+      - id: 1
+        type: boolean
+        name: switch
+
   - entity: sensor
     category: diagnostic
     class: voltage
@@ -50,7 +59,16 @@ secondary_entities:
     name: Overcurrent alarm
     class: problem
     category: diagnostic
+    hidden: unavailable
     dps:
+      - id: 7
+        type: boolean
+        optional: true
+        name: available
+        mapping:
+          - dps_val: null
+            value: false
+          - value: true
       - id: 7
         type: boolean
         name: sensor
@@ -58,9 +76,22 @@ secondary_entities:
         mapping:
           - dps_val: null
             value: false
-  - entity: number
+  - entity: time
     category: config
     translation_key: timer
+    dps:
+      - id: 2
+        type: integer
+        name: second
+        range:
+          min: 0
+          max: 86400
+  - entity: number
+    category: config
+    class: duration
+    translation_key: timer
+    # 2025-07-20
+    deprecated: time.timer
     dps:
       - id: 2
         type: integer
