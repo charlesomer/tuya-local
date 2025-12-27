@@ -204,6 +204,9 @@
                     }
                 }
             },
+            "cold_water": {
+                "name": "Κρύο νερό"
+            },
             "thermostat": {
                 "name": "Θερμοστάτης",
                 "state_attributes": {
@@ -932,7 +935,15 @@
                     "dry": "Στεγνό",
                     "comfortable": "Άνετο",
                     "damp": "Υγρό",
-                    "smoothing": "Εξομάλυνση"
+                    "smoothing": "Εξομάλυνση",
+                    "cleaned": "Καθαρισμένο",
+                    "cold_water_unavailable": "Μη διαθέσιμο κρύο νερό",
+                    "drain": "Αποστράγγιση",
+                    "drain_cold_water": "Αποστράγγιση κρύου νερού",
+                    "drain_hot_water": "Αποστράγγιση ζεστού νερού",
+                    "drain_normal_water": "Αποστράγγιση κανονικού νερού",
+                    "high_temperature_emptying": "Αποστράγγιση υψηλής θερμοκρασίας",
+                    "high_temperature_emptied": "Αποστράγγιση υψηλής θερμοκρασίας ολοκληρώθηκε"
                 }
             },
             "time_remaining": {
@@ -988,6 +999,12 @@
             "anti_frost": {
                 "name": "Απόψυξη"
             },
+            "auto_clean": {
+                "name": "Αυτόματος καθαρισμός"
+            },
+            "auto_light": {
+                "name": "Αυτόματο φως"
+            },
             "breaker": {
                 "name": "Διακόπτης",
                 "state": {
@@ -1000,6 +1017,9 @@
             },
             "evaporator_cleaning": {
                 "name": "Καθαρισμός αποστακτήρα"
+            },
+            "flip_image": {
+                "name": "Αναστροφή εικόνας"
             },
             "ionizer": {
                 "name": "Ιονιστής"
